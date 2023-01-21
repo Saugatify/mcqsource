@@ -94,7 +94,7 @@ body{
 }
 
 .quiz-box .option:hover{
-    background: var(--primary-color);
+    background: #67a1b4;
 }
 
 .quiz-footer{
@@ -170,14 +170,12 @@ body{
     transition: all 0.3s;
 }
 .result-footer .again-quiz{
-    background: #4739e0;
-    color: #fff;
-    border-color: #4739e0;
+  
     display: none;
 }
 .result-footer .again-quiz:hover{
     background: #fff;
-    color: #4739e0;
+   
     border-color: #fff;
     display: none;
 }
@@ -218,5 +216,66 @@ body{
   .disabled {
     opacity: 0.5;
     pointer-events: none;
+  }
+ 
+  @media only screen and (max-width: 600px) {
+    /* Change the font family for better readability on small screens */
+    body {
+      font-family: 'Open Sans', sans-serif;
+    }
+  
+    /* Center the quiz container on the screen */
+    .quiz-box {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      width: 90%;
+      max-width: none; /* Remove max-width restriction */
+    }
+  
+    /* Increase the font size of the question and options */
+    .quiz-box h2 {
+      font-size: 22px;
+    }
+    .quiz-box .option {
+      font-size: 18px;
+      border-color: #333;
+    }
+  
+    /* Add a background color for better contrast */
+    .quiz-box {
+      background: #ffffff;
+      box-shadow: none; /* Remove the box shadow */
+      color: #333;
+    }
+  
+    /* Add a border radius to make the quiz container look more visually appealing */
+    .quiz-box, .quiz-footer, .result-box {
+      border-radius: 10px;
+    }
+  
+    /* Center the next button and result box */
+    .next-btn, .result-box {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  
+    /* Increase the padding around the result box */
+    .result-box {
+      padding: 0px;
+      margin-top: 0px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      width: 90%;
+      max-width: none; 
+    }
+  
+    /* Use a different font weight for the result box text */
+    .result-box h2 {
+      font-weight: 600;
+    }
   }
   

@@ -5,7 +5,7 @@
 }
 :root {
   --primary-color: #ee6c4d;
-  --secondary-color: #118ab2;
+  --secondary-color: #06d6a0;
 }
 
 body {
@@ -98,6 +98,7 @@ body {
   .container {
       flex-wrap: wrap;
       align-items: center;
+      
   }
 
   .branch-select,
