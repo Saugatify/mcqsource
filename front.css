@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: #ef476f;
+  --secondary-color: #06d6a0;
+}
+
+body {
+  background-color: #f2f2f2;
+  font-family: Poppins, sans-serif;
+}
+
+.header {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 15px rgb(176, 176, 176);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+.branch-select,
+.subject-select {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px;
+  text-align: center;
+}
+
+.branch-select select,
+.subject-select select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #fff;
+  font-size: 16px;
+  color: #333;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  
+}
+.branch-select select:hover,
+.subject-select select:hover {
+  box-shadow: 0 0 15px var(--secondary-color);
+}
+
+.branch-select select:focus,
+.subject-select select:focus {
+  border-color: var(--secondary-color);
+  outline: none;
+}
+
+.branch-select select::placeholder,
+.subject-select select::placeholder {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.branch-select h2,
+.subject-select h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Add animations and transition to the selectors */
+
+.branch-select select,
+.subject-select select {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Add responsive design */
+
+@media (max-width: 600px) {
+  .container {
+      flex-wrap: wrap;
+      align-items: center;
+  }
+
+  .branch-select,
+  .subject-select {
+      width: 100%;
+      max-width: 100%;
+      margin: 20px 0;
+  }
+}

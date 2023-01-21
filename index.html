@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Open Source All Level MCQ</title>
+    <link rel="stylesheet" type="text/css" href="front.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Open Source All Level MCQ</h1>
+    </div>
+    <div class="container">
+        <div class="branch-select">
+            <h2>Select Branch</h2>
+            <select id="branch-selector" onchange="loadSubjects()">
+                <option value="">Select Branch</option>
+                <option value="engineering">Engineering</option>
+                <option value="medical">Medical</option>
+                <option value="commerce">Commerce</option>
+                <option value="science">Science</option>
+            </select>
+        </div>
+        <div class="subject-select" id="subject-select">
+            <h2>Select Subject</h2>
+            <select id="subject-selector" onchange="redirectToQuestionPage()">
+                <option value="">Select Subject</option>
+            </select>
+        </div>
+    </div>
+    <script>
+        function loadSubjects() {
+            var branch = document.getElementById("branch-selector").value;
+            var subjectSelector = document.getElementById("subject-selector");
+            subjectSelector.innerHTML = "";
+            if (branch === "engineering") {
+                subjectSelector.innerHTML = "<option value='maths'>Maths</option><option value='physics'>Physics</option><option value='chemistry'>Chemistry</option>";
+            } else if (branch === "medical") {
+                subjectSelector.innerHTML = "<option value='anatomy'>Anatomy</option><option value='physiology'>Physiology</option><option value='pharmacology'>Pharmacology</option>";
+            } else if (branch === "commerce") {
+                subjectSelector.innerHTML = "<option value='accounts'>Accounts</option><option value='economics'>Economics</option><option value='businessStudies'>Business Studies</option>";
+            } else if (branch === "science") {
+                subjectSelector.innerHTML = "<option value='biology'>Biology</option><option value='physics'>Physics</option><option value='chemistry'>Chemistry</option>";
+            }
+            subjectSelector.selectedIndex = -1;
+        }
+
+const subjectMapping = {
+  'maths': 'question.html',
+  'physics': 'question.html',
+  'chemistry': 'chemistry.html',
+  'anatomy': 'anatomy.html',
+  'physiology': 'physiology.html',
+  'pharmacology': 'pharmacology.html',
+  'accounts': 'accounts.html',
+  'economics': 'economics.html',
+  'businessStudies': 'businessStudies.html',
+  'biology': 'biology.html'
+};
+
+function redirectToQuestionPage() {
+    var subject = document.getElementById("subject-selector").value;
+    if (subject) {
+        window.location.href = subjectMapping[subject];
+    }
+}
+window.onload = function () {
+    document.getElementById("branch-selector").selectedIndex = 0;
+    document.getElementById("subject-selector").innerHTML = "<option value=''>Select Subject</option>";
+}
+
+
+    </script>
+</body>
+
+</html>
