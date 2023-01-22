@@ -33,11 +33,16 @@ function setNumQuestions() {
 }
 
 
-start_btn.onclick =()=>{
-    quiz_box.classList.remove("inactive");
-    document.querySelector(".top").style.display = "none";
-    start_btn.classList.add("inactive");
+start_btn.onclick = () => {
+    if(numQuestionsSelect.value === "-1") {
+        alert("Please select the number of questions before starting the quiz");
+    } else {
+        quiz_box.classList.remove("inactive");
+        document.querySelector(".top").style.display = "none";
+        start_btn.classList.add("inactive");
+    }
 }
+
 function shuffleQuestions() {
     for (let i = questions.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));

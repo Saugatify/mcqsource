@@ -14,11 +14,13 @@
 <div class="top">
 <select id="numQuestions">
 
-  <option value=" ">Select</option> 
+  <option value="-1">Select</option> 
   <option value="10">10</option>
   <option value="20">20</option>
   <option value="15">15</option>
 </select>
+<div class="alert" id="alert-message">Please select the number of questions before starting the quiz</div>
+
 </div>
 
    
@@ -53,7 +55,53 @@
         </div>
     </div>
 
+    <style>
+        .alert {
+    position: fixed; /* makes the alert stay in the same position on the screen */
+    top: 10px; /* sets the top margin */
+    left: 50%; /* centers the alert horizontally */
+    transform: translateX(-50%); /* centers the alert horizontally */
+    padding: 20px; /* sets the padding for the alert box */
+    background-color: #f44336; /* sets the background color */
+    color: white; /* sets the text color */
+    border-radius: 5px; /* adds rounded corners */
+    text-align: center; /* centers the text */
+    z-index: 1; /* makes the alert appear on top of other elements */
+    animation: alert-animation 0.5s ease-in-out; /* adds an animation to the alert */
+}
+
+/* keyframes for the alert animation */
+@keyframes alert-animation {
+    from {
+        opacity: 0; /* starts with 0% opacity */
+    }
+    to {
+        opacity: 1; /* ends with 100% opacity */
+    }
+}
+
+    </style>
     <script src="physics.js"></script>
     <script src="script.js"></script>
+    <script>
+        const start_btn = document.querySelector(".start_quiz");
+        const quiz_box = document.querySelector(".quiz-box");
+        const numQuestionsSelect = document.querySelector("#numQuestions");
+        const alertMessage = document.getElementById("alert-message");
+        
+        start_btn.onclick = () => {
+            if(numQuestionsSelect.value === "-1") {
+                alertMessage.style.display = "block";
+            } else {
+                alertMessage.style.display = "none";
+                quiz_box.classList.remove("inactive");
+                document.querySelector(".top").style.display = "none";
+                start_btn.classList.add("inactive");
+            }
+        }
+        
+        </script>
+        
+
 </body>
 </html>
