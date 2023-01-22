@@ -62,6 +62,7 @@ ShowQuestion(que_index);
 function ShowQuestion(q_index){
     que_text.innerText = (q_index+1) +". "+ questions[q_index].question;
 
+
 var option_statement = "";
 for(var i=0; i<questions[q_index].options.length; i++){
     option_statement += `<div class="option">${questions[q_index].options[i]}</div>`;
