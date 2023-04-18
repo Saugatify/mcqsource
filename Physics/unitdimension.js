@@ -7,7 +7,7 @@ var questions = [
             "Electromagnetic force",
             "Nuclear force",
             "Weak force",
-            "Gravitational force",
+            "Gravitational force"
          ]
     },
 
@@ -231,7 +231,26 @@ var questions = [
             "7 units",
          ]
     },
-
+    {
+        "question": "What is the SI unit of force?",
+        "answer": "Newton",
+        "options": [
+          "Joule",
+          "Newton",
+          "Watt",
+          "Pascal",
+        ]
+      },
+      {
+        "question": "Which of the following is a fundamental unit of measurement?",
+        "answer": "Meter",
+        "options": [
+          "Celsius",
+          "Kilogram",
+          "Meter",
+          "Second",
+        ]
+      },
 
 
 ];
